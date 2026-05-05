@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Example Project 1",
+      "description": "This is an example project. Replace this with your actual projects. Click 'Edit' in the admin panel to modify.",
+      "image": "https://via.placeholder.com/400x300?text=Project+1",
+      "link": "https://example.com",
+      "tags": ["JavaScript", "Web Design"],
+      "createdAt": "2026-05-05T10:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Example Project 2",
+      "description": "Another example project to demonstrate the portfolio gallery. You can manage projects from the admin panel.",
+      "image": "https://via.placeholder.com/400x300?text=Project+2",
+      "link": "https://example.com",
+      "tags": ["React", "Node.js"],
+      "createdAt": "2026-05-05T10:00:00.000Z"
+    }
+  ]
+}
