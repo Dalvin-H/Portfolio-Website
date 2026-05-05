@@ -20,12 +20,19 @@
     <div id="login-container" class="login-container">
         <div class="login-box">
             <h1>Admin Login</h1>
-            <p class="login-help">Enter your admin password to manage projects</p>
+            <p class="login-help" id="login-help-text">Enter your admin password to manage projects</p>
             <form id="login-form">
                 <input type="password" id="password" placeholder="Admin Password" required>
                 <button type="submit" class="btn btn-primary">Login</button>
                 <p id="login-error" class="error"></p>
             </form>
+            <div id="first-setup-section" style="display: none; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #bdc3c7;">
+                <h3>First Time Setup</h3>
+                <p>No password set yet. Set one below:</p>
+                <input type="password" id="first-setup-password" placeholder="Create a password (min 4 chars)" style="width: 100%; padding: 0.8rem; margin: 0.5rem 0; border: 1px solid #bdc3c7; border-radius: 4px; font-size: 1rem;">
+                <button type="button" id="first-setup-btn" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Set Password</button>
+                <p id="setup-message"></p>
+            </div>
         </div>
     </div>
 

@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // Login form
   document.getElementById('login-form').addEventListener('submit', handleLogin);
 
+  // First setup button
+  document.getElementById('first-setup-btn').addEventListener('click', handleFirstSetup);
+
   // Logout button
   document.getElementById('logout-btn').addEventListener('click', handleLogout);
 
@@ -44,12 +47,59 @@ document.addEventListener('DOMContentLoaded', () => {
 // Check if user is logged in
 function checkAuthStatus() {
   const password = sessionStorage.getItem('portfolio_admin_logged_in');
+  const adminPassword = storage.getAdminPassword();
+
   if (password) {
     showDashboard();
-    document.getElementById('admin-status').textContent = 'Logged in';
+  } else if (!adminPassword) {
+    // First time - no password set yet, show setup
+    showLoginWithSetup();
   } else {
+    // Password exists, show normal login
     showLogin();
   }
+}
+
+// Show login with first-time setup option
+function showLoginWithSetup() {
+  document.getElementById('login-container').style.display = 'flex';
+  document.getElementById('dashboard-container').style.display = 'none';
+  document.getElementById('logout-btn').style.display = 'none';
+  
+  // Show the first setup section
+  document.getElementById('first-setup-section').style.display = 'block';
+  document.getElementById('login-help-text').textContent = 'First time? Set your admin password below';
+  document.getElementById('login-form').style.display = 'none';
+}
+
+// Handle first setup
+function handleFirstSetup() {
+  const password = document.getElementById('first-setup-password').value;
+  const messageEl = document.getElementById('setup-message');
+
+  if (!password) {
+    messageEl.textContent = 'Please enter a password';
+    messageEl.className = 'error';
+    return;
+  }
+
+  if (password.length < 4) {
+    messageEl.textContent = 'Password must be at least 4 characters';
+    messageEl.className = 'error';
+    return;
+  }
+
+  storage.setAdminPassword(password);
+  messageEl.textContent = 'Password set! Logging you in...';
+  messageEl.className = 'success';
+
+  // Auto-login
+  setTimeout(() => {
+    sessionStorage.setItem('portfolio_admin_logged_in', 'true');
+    document.getElementById('admin-status').textContent = 'Logged in';
+    showDashboard();
+    loadProjects();
+  }, 1000);
 }
 
 // Login handler
@@ -60,7 +110,7 @@ function handleLogin(e) {
   const errorEl = document.getElementById('login-error');
 
   if (!adminPassword) {
-    errorEl.textContent = 'Admin password not set! Use Settings to set one first.';
+    errorEl.textContent = 'Admin password not set! Use setup to create one first.';
     return;
   }
 
@@ -87,6 +137,11 @@ function showLogin() {
   document.getElementById('login-container').style.display = 'flex';
   document.getElementById('dashboard-container').style.display = 'none';
   document.getElementById('logout-btn').style.display = 'none';
+  
+  // Show normal login, hide setup
+  document.getElementById('login-form').style.display = 'block';
+  document.getElementById('first-setup-section').style.display = 'none';
+  document.getElementById('login-help-text').textContent = 'Enter your admin password to manage projects';
 }
 
 function showDashboard() {
