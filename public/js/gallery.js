@@ -1,9 +1,9 @@
-import { api } from './api.js';
+import { storage } from './storage.js';
 
 // Load and display projects gallery
-export async function loadGallery() {
+function loadGallery() {
   try {
-    const projects = await api.getProjects();
+    const projects = storage.getProjects();
     const gallery = document.getElementById('gallery');
 
     if (projects.length === 0) {
@@ -17,7 +17,7 @@ export async function loadGallery() {
         <div class="project-info">
           <h3>${project.title}</h3>
           <p>${project.description}</p>
-          ${project.tags.length > 0 ? `
+          ${project.tags && project.tags.length > 0 ? `
             <div class="tags">
               ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
             </div>
@@ -34,3 +34,7 @@ export async function loadGallery() {
 
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', loadGallery);
+
+// Listen for updates from admin panel
+window.addEventListener('projects-updated', loadGallery);
+

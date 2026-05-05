@@ -57,6 +57,13 @@ body {
   color: #3498db;
 }
 
+.admin-status {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -292,8 +299,15 @@ body {
 
 .login-box h1 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   color: #2c3e50;
+}
+
+.login-help {
+  text-align: center;
+  color: #7f8c8d;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
 }
 
 .login-box form {
@@ -370,7 +384,9 @@ body {
   flex: 1;
 }
 
-#form-message {
+#form-message,
+#import-message,
+#password-message {
   margin-top: 1rem;
   text-align: center;
   font-weight: 500;
@@ -415,6 +431,40 @@ body {
   font-size: 0.85rem;
   color: #7f8c8d;
   margin-top: 1rem;
+}
+
+/* Settings */
+.settings-box {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+}
+
+.settings-box h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.settings-box p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.settings-box textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.settings-box textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
 /* Footer */

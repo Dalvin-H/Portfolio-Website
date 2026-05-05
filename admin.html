@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-page">
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">Portfolio Admin</div>
+            <div class="nav-links">
+                <span id="admin-status" class="admin-status">Not logged in</span>
+                <button id="logout-btn" class="btn btn-secondary" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="login-container" class="login-container">
+        <div class="login-box">
+            <h1>Admin Login</h1>
+            <p class="login-help">Enter your admin password to manage projects</p>
+            <form id="login-form">
+                <input type="password" id="password" placeholder="Admin Password" required>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p id="login-error" class="error"></p>
+            </form>
+        </div>
+    </div>
+
+    <div id="dashboard-container" class="dashboard-container" style="display: none;">
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <button class="menu-btn active" data-section="projects">Projects</button>
+                <button class="menu-btn" data-section="add-project">Add New Project</button>
+                <button class="menu-btn" data-section="settings">Settings</button>
+            </div>
+        </aside>
+
+        <main class="admin-main">
+            <!-- Projects Section -->
+            <section id="projects-section" class="admin-section active">
+                <h2>Manage Projects</h2>
+                <div id="projects-list" class="projects-list">
+                    <!-- Projects will be loaded here -->
+                </div>
+            </section>
+
+            <!-- Add/Edit Project Section -->
+            <section id="add-project-section" class="admin-section">
+                <h2>Add New Project</h2>
+                <form id="project-form" class="project-form">
+                    <input type="hidden" id="project-id">
+                    <div class="form-group">
+                        <label for="project-title">Project Title *</label>
+                        <input type="text" id="project-title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-description">Description *</label>
+                        <textarea id="project-description" required rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-image">Image URL</label>
+                        <input type="text" id="project-image" placeholder="https://..." title="Full URL to image">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-link">Project Link</label>
+                        <input type="text" id="project-link" placeholder="https://..." title="Full URL to project">
+                    </div>
+                    <div class="form-group">
+                        <label for="project-tags">Tags (comma separated)</label>
+                        <input type="text" id="project-tags" placeholder="React, JavaScript, Web">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="submit-btn">Create Project</button>
+                        <button type="button" class="btn btn-secondary" id="cancel-btn" style="display: none;">Cancel</button>
+                    </div>
+                    <p id="form-message"></p>
+                </form>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings-section" class="admin-section">
+                <h2>Settings</h2>
+                <div class="settings-box">
+                    <h3>Data Management</h3>
+                    <p>Export your projects as JSON to backup or share:</p>
+                    <button id="export-btn" class="btn btn-secondary">Export Projects</button>
+                    
+                    <h3 style="margin-top: 2rem;">Import Projects</h3>
+                    <p>Paste JSON data to import projects:</p>
+                    <textarea id="import-data" placeholder="Paste JSON here..." rows="8"></textarea>
+                    <button id="import-btn" class="btn btn-secondary" style="margin-top: 0.5rem;">Import Projects</button>
+                    <p id="import-message"></p>
+
+                    <h3 style="margin-top: 2rem;">Admin Password</h3>
+                    <p>Change your admin password:</p>
+                    <input type="password" id="new-password" placeholder="New password" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0;">
+                    <button id="change-password-btn" class="btn btn-secondary">Change Password</button>
+                    <p id="password-message"></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
