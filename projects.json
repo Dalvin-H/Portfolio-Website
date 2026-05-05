@@ -1,16 +1,30 @@
 [
   {
     "id": "project-1",
-    "title": "Project One",
-    "description": "Brief description of your first project",
-    "image": "/images/project-1-hero.png",
+    "title": "Project BMO",
+    "description": "A personalizable and customizable macropad",
+    "image": "/images/project-1/project-1-hero.png",
     "page": "projects/project-1.html"
   },
   {
     "id": "project-2",
-    "title": "Project Two",
-    "description": "Brief description of your second project",
-    "image": "/images/project-2.jpg",
+    "title": "FabLab Ledbox",
+    "description": "A custom built LED sign for the KdG FabLab",
+    "image": "/images/project-2/project-2-hero.png",
     "page": "projects/project-2.html"
-  }
+  },
+  {
+    "id": "project-3",
+    "title": "Useless Box",
+    "description": "A Voronoi styled useless box",
+    "image": "/images/project-3/project-3-hero.png",
+    "page": "projects/project-3.html"
+  },
+    {
+        "id": "project-4",
+        "title": "Mushroom Dome Lamp",
+        "description": "A custom built lamp in the shape of a mushroom dome",
+        "image": "/images/project-4/project-4-hero.png",
+        "page": "projects/project-4.html"
+    }
 ]
