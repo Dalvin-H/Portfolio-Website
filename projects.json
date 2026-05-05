@@ -1,22 +1,16 @@
-{
-  "projects": [
-    {
-      "id": "1",
-      "title": "Example Project 1",
-      "description": "This is an example project. You can edit or delete this from the admin panel. Create new projects by going to Admin > Add New Project.",
-      "image": "https://via.placeholder.com/400x300?text=Project+1",
-      "link": "https://example.com",
-      "tags": ["JavaScript", "Web Design"],
-      "createdAt": "2026-05-05T10:00:00.000Z"
-    },
-    {
-      "id": "2",
-      "title": "Example Project 2",
-      "description": "Another example project. These are loaded automatically when the site first loads. After that, projects are stored in your browser's local storage.",
-      "image": "https://via.placeholder.com/400x300?text=Project+2",
-      "link": "https://example.com",
-      "tags": ["React", "JavaScript"],
-      "createdAt": "2026-05-05T10:00:00.000Z"
-    }
-  ]
-}
+[
+  {
+    "id": "project-1",
+    "title": "Project One",
+    "description": "Brief description of your first project",
+    "image": "https://via.placeholder.com/400x300?text=Project+One",
+    "page": "projects/project-1.html"
+  },
+  {
+    "id": "project-2",
+    "title": "Project Two",
+    "description": "Brief description of your second project",
+    "image": "https://via.placeholder.com/400x300?text=Project+Two",
+    "page": "projects/project-2.html"
+  }
+]

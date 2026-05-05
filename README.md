@@ -1,4 +1,47 @@
-# Static Modular Portfolio Website
+# Portfolio Website
+
+Simple static portfolio with gallery tiles.
+
+## Structure
+
+```
+├── index.html              # Homepage
+├── projects.json           # Project list
+├── projects/
+│   ├── project-1.html      # Project template
+│   ├── project-2.html      # Project template
+│   └── [add more here]
+├── css/style.css           # Styling
+└── js/gallery.js           # Gallery logic
+```
+
+## Adding a Project
+
+1. **Create file**: Copy `projects/project-1.html` → `projects/project-3.html`
+2. **Edit content**: Title, description, images, and text
+3. **Update projects.json**:
+```json
+{
+  "id": "project-3",
+  "title": "Your Project",
+  "description": "Brief description",
+  "image": "https://via.placeholder.com/400x300",
+  "page": "projects/project-3.html"
+}
+```
+4. **Deploy**:
+```bash
+git add .
+git commit -m "Add project"
+git push origin main
+```
+
+## Local Testing
+
+```bash
+npm run dev
+# Visit http://localhost:3000
+```
 
 A fully static, modular portfolio website with client-side admin panel. Works perfectly with GitHub Pages and Cloudflare!
 
