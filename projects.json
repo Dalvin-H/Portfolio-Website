@@ -3,14 +3,14 @@
     "id": "project-1",
     "title": "Project One",
     "description": "Brief description of your first project",
-    "image": "https://via.placeholder.com/400x300?text=Project+One",
+    "image": "/images/project-1-hero.png",
     "page": "projects/project-1.html"
   },
   {
     "id": "project-2",
     "title": "Project Two",
     "description": "Brief description of your second project",
-    "image": "https://via.placeholder.com/400x300?text=Project+Two",
+    "image": "/images/project-2.jpg",
     "page": "projects/project-2.html"
   }
 ]
