@@ -3,6 +3,7 @@
     "id": "project-1",
     "title": "Project BMO",
     "description": "A personalizable and customizable macropad",
+    "category": "physical",
     "image": "/images/project-1/project-1-hero.png",
     "page": "projects/project-1.html"
   },
@@ -10,6 +11,7 @@
     "id": "project-2",
     "title": "FabLab Ledbox",
     "description": "A custom built LED sign for the KdG FabLab",
+    "category": "physical",
     "image": "/images/project-2/project-2-hero (Medium).png",
     "page": "projects/project-2.html"
   },
@@ -17,14 +19,49 @@
     "id": "project-3",
     "title": "Useless Box",
     "description": "A Voronoi styled useless box",
+    "category": "physical",
     "image": "/images/project-3/project-3-hero (Medium).png",
     "page": "projects/project-3.html"
   },
+  {
+    "id": "project-4",
+    "title": "Mushroom Dome Lamp",
+    "description": "A custom built lamp in the shape of a mushroom dome",
+    "category": "physical",
+    "image": "/images/project-4/project-4-hero (Medium).png",
+    "page": "projects/project-4.html"
+    },
     {
-        "id": "project-4",
-        "title": "Mushroom Dome Lamp",
-        "description": "A custom built lamp in the shape of a mushroom dome",
-        "image": "/images/project-4/project-4-hero (Medium).png",
-        "page": "projects/project-4.html"
-    }
+    "id": "project-5",
+    "title": "Mexlite Hanging Light",
+    "description": "A digital recreation of the Mexlite hanging light",
+    "category": "digital",
+    "image": "/images/project-5/project-5-hero.png",
+    "page": "projects/project-5.html"
+  },
+  {
+    "id": "project-6",
+    "title": "3D Printed Vase",
+    "description": "A decorative vase designed and 3D printed using PLA filament",
+    "category": "physical",
+    "image": "/images/project-6/project-6-hero (Medium).png",
+    "page": "projects/project-6.html"
+  },
+  {
+    "id": "project-7",
+    "title": "Personal Blog",
+    "description": "A minimalist personal blog built with Jekyll and hosted on GitHub Pages",
+    "category": "digital",
+    "image": "/images/project-7/project-7-hero (Medium).png",
+    "page": "projects/project-7.html"
+  },
+  {
+    "id": "project-8",
+    "title": "Arduino Weather Station",
+    "description": "A weather station built with an Arduino Uno, DHT22 sensor, and LCD display",
+    "category": "physical",
+    "image": "/images/project-8/project-8-hero (Medium).png",
+    "page": "projects/project-8.html"
+  }
+
 ]
