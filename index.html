@@ -9,31 +9,63 @@
 <body>
     <nav class="navbar">
         <div class="container">
-            <h1 class="logo">Dalvin Heyninck</h1>
-            <p class="tagline">Portfolio</p>
+            <div>
+                <h1 class="logo">Dalvin Heyninck</h1>
+                <p class="tagline">Portfolio</p>
+            </div>
+            <p class="nav-note">Selected work in physical and digital design</p>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <h2>My Work</h2>
-            <p>Projects and Case Studies</p>
-        </div>
-    </header>
 
     <main class="container">
         <div class="tabs-container">
+            <div class="section-heading section-heading-compact">
+                <p class="eyebrow">Selected work</p>
+                <h3>Filter by category</h3>
+            </div>
             <div class="tabs" id="tabs">
                 <!-- Tabs generated from projects.json categories -->
             </div>
         </div>
-        <div class="gallery" id="gallery">
-            <!-- Gallery tiles generated from projects.json -->
-        </div>
+
+        <section id="gallery" class="gallery-section">
+            <div class="gallery" id="gallery-grid">
+                <!-- Gallery tiles generated from projects.json -->
+            </div>
+        </section>
+
+        <section class="process-section" id="process">
+            <div class="section-heading">
+                <p class="eyebrow">Process</p>
+                <h3>A straightforward workflow that keeps the result polished.</h3>
+            </div>
+
+            <div class="process-grid">
+                <article class="process-card">
+                    <span class="process-step">01</span>
+                    <h4>Define the problem</h4>
+                    <p>Start with a clear goal, constraints, and a focused visual direction before building anything.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-step">02</span>
+                    <h4>Prototype and refine</h4>
+                    <p>Test ideas early, simplify the layout, and remove anything that does not support the outcome.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-step">03</span>
+                    <h4>Present cleanly</h4>
+                    <p>Use consistent spacing, restrained color, and a tighter content structure to make the work easier to read.</p>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
-        <p>&copy; 2026 Dalvin Heyninck</p>
+        <div class="container footer-inner">
+            <p>&copy; 2026 Dalvin Heyninck</p>
+            <p>Built for a cleaner portfolio presentation.</p>
+        </div>
     </footer>
 
     <script src="js/projects.js"></script>

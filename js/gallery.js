@@ -4,7 +4,7 @@ let activeCategory = 'all';
 
 async function loadGallery() {
   try {
-    const response = await fetch('/projects.json');
+    const response = await fetch('./projects.json');
     allProjects = await response.json();
     
     // Get unique categories
@@ -31,7 +31,10 @@ async function loadGallery() {
     renderGallery();
   } catch (error) {
     console.error('Error loading projects:', error);
-    document.getElementById('gallery').innerHTML = '<p>Error loading projects</p>';
+    const gallery = document.getElementById('gallery-grid');
+    if (gallery) {
+      gallery.innerHTML = '<p>Error loading projects</p>';
+    }
   }
 }
 
@@ -40,7 +43,7 @@ function renderGallery() {
     ? allProjects 
     : allProjects.filter(p => p.category === activeCategory);
   
-  const gallery = document.getElementById('gallery');
+  const gallery = document.getElementById('gallery-grid');
   gallery.innerHTML = filteredProjects.map(project => `
     <a href="${project.page}" class="tile">
       <div class="tile-image">
