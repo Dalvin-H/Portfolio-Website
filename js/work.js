@@ -141,13 +141,14 @@ function renderProjects() {
     const fallbackImage = buildFallbackImage(project.title, project.workCategory);
     const imageSource = project.image || fallbackImage;
     const categoryLabel = formatCategoryLabel(project.workCategory);
+    const tileTarget = 'under-construction.html';
     const detailLabels = (Array.isArray(project.tags) ? project.tags : [])
       .map(tag => detailFilters.find(filter => filter.key === tag)?.label || tag)
       .slice(0, 3)
       .join(' · ');
 
     return `
-      <a class="work-tile" href="${project.page}" aria-label="Open ${project.title}">
+      <a class="work-tile" href="${tileTarget}" aria-label="Open ${project.title}">
         <img
           src="${imageSource}"
           alt="${project.title} teaser image"

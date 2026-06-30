@@ -50,34 +50,84 @@
     "page": "projects/project-5.html"
   },
   {
-    "id": "project-6",
-    "title": "3D Printed Vase",
-    "description": "A decorative vase designed and 3D printed using PLA filament",
+    "id": "project-9",
+    "title": "Knowledge Hub Scale Prototype",
+    "description": "This project tile is under construction.",
+    "category": "physical",
+    "workCategory": "own-projects",
+    "tags": ["physical", "design", "3d-printer"],
+    "image": "/images/project-9/project-9-hero.jpg",
+    "page": "under-construction.html"
+  },
+  {
+    "id": "project-10",
+    "title": "Engine Belt Protective Cover",
+    "description": "This project tile is under construction.",
     "category": "physical",
     "workCategory": "cad-exercises",
-    "tags": ["physical", "3d-printer", "design"],
-    "image": "/images/project-6/project-6-hero (Medium).png",
-    "page": "projects/project-6.html"
+    "tags": ["physical", "design", "cnc"],
+      "image": "/images/project-10/project-10-hero.jpg",
+    "page": "under-construction.html"
   },
   {
-    "id": "project-7",
-    "title": "Personal Blog",
-    "description": "A minimalist personal blog built with Jekyll and hosted on GitHub Pages",
-    "category": "digital",
+    "id": "project-11",
+    "title": "Precision Knife Case",
+    "description": "This project tile is under construction.",
+    "category": "physical",
     "workCategory": "own-projects",
-    "tags": ["digital", "programming", "design"],
-    "image": "/images/project-7/project-7-hero (Medium).png",
-    "page": "projects/project-7.html"
+    "tags": ["physical", "design", "lasercutter"],
+    "image": "/images/project-11/project-11-hero.jpg",
+    "page": "under-construction.html"
   },
   {
-    "id": "project-8",
-    "title": "Arduino Weather Station",
-    "description": "A weather station built with an Arduino Uno, DHT22 sensor, and LCD display",
+    "id": "project-12",
+    "title": "Modular Lab Tube Box",
+    "description": "This project tile is under construction.",
     "category": "physical",
     "workCategory": "college-assignments",
-    "tags": ["physical", "electrical", "pcb", "programming", "design"],
-    "image": "/images/project-8/project-8-hero (Medium).png",
-    "page": "projects/project-8.html"
+    "tags": ["physical", "design", "3d-printer"],
+    "image": "/images/project-12/project-12-hero.jpg",
+    "page": "under-construction.html"
+  },
+  {
+    "id": "project-13",
+    "title": "VR Bow Attatchment",
+    "description": "This project tile is under construction.",
+    "category": "physical",
+    "workCategory": "own-projects",
+    "tags": ["physical", "design", "3d-printer"],
+      "image": "/images/project-13/project-13-hero.png",
+    "page": "under-construction.html"
+  },
+  {
+    "id": "project-14",
+    "title": "NFC Keychain",
+    "description": "This project tile is under construction.",
+    "category": "digital",
+    "workCategory": "own-projects",
+    "tags": ["digital", "electrical", "programming", "design"],
+    "image": "/images/project-14/project-14-hero.jpg",
+    "page": "under-construction.html"
+  },
+  {
+    "id": "project-15",
+    "title": "Tomato plant tower",
+    "description": "This project tile is under construction.",
+    "category": "physical",
+    "workCategory": "cad-exercises",
+    "tags": ["physical", "design", "3d-printer"],
+    "image": "/images/project-15/project-15-hero.jpg",
+    "page": "under-construction.html"
+  },
+  {
+    "id": "project-16",
+    "title": "Clone trooper Helmet",
+    "description": "This project tile is under construction.",
+    "category": "physical",
+    "workCategory": "own-projects",
+    "tags": ["physical", "design", "3d-printer"],
+    "image": "/images/project-16/project-16-hero.jpg",
+    "page": "under-construction.html"
   }
 
 ]

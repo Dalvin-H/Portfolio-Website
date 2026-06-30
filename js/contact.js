@@ -48,7 +48,7 @@ if (contactForm && contactStatus) {
       }
 
       contactForm.reset();
-      contactStatus.textContent = 'Message sent successfully. I will get back to you soon.';
+      contactStatus.textContent = 'Message sent successfully. Thank you! I will get back to you soon.';
       contactStatus.className = 'contact-status success';
     } catch (error) {
       contactStatus.textContent = 'Something went wrong while sending the message. Please try again.';
