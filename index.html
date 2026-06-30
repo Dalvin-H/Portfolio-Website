@@ -6,69 +6,29 @@
     <title>Portfolio - Dalvin Heyninck</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <div>
-                <h1 class="logo">Dalvin Heyninck</h1>
-                <p class="tagline">Portfolio</p>
-            </div>
-            <p class="nav-note">Selected work in physical and digital design</p>
+<body class="intro-body">
+    <main class="intro-page">
+        <div class="intro-shell">
+            <p class="intro-kicker">Portfolio</p>
+
+            <section class="intro-card" aria-label="Introduction">
+                <div class="intro-portrait-wrap">
+                    <img class="intro-portrait" src="Portret_Dalvin.jpg" alt="Portrait of Dalvin Heyninck">
+                </div>
+
+                <div class="intro-copy">
+                    <h1 class="intro-name">Dalvin Heyninck</h1>
+                    <p class="intro-text">Hi, I'm Dalvin, a Multimedia &amp; Creative Technologies graduate with a passion for designing, building, and bringing ideas to life. I enjoy combining creativity with technology through 3D design, product development, programming, and digital fabrication. This portfolio showcases a selection of projects that reflect my curiosity, hands on approach, and drive to create practical and innovative solutions. Feel free to explore my work and discover the projects that have shaped my journey.</p>
+                </div>
+            </section>
+
+            <nav class="quicklinks" aria-label="Quick links">
+                <a class="button button-secondary" href="work.html">My work</a>
+                <a class="button button-secondary" href="about.html">About me</a>
+                <a class="button button-secondary" href="contact.html">Contact</a>
+                <a class="button button-secondary" href="projects/project-4.html">More</a>
+            </nav>
         </div>
-    </nav>
-
-
-    <main class="container">
-        <div class="tabs-container">
-            <div class="section-heading section-heading-compact">
-                <p class="eyebrow">Selected work</p>
-                <h3>Filter by category</h3>
-            </div>
-            <div class="tabs" id="tabs">
-                <!-- Tabs generated from projects.json categories -->
-            </div>
-        </div>
-
-        <section id="gallery" class="gallery-section">
-            <div class="gallery" id="gallery-grid">
-                <!-- Gallery tiles generated from projects.json -->
-            </div>
-        </section>
-
-        <section class="process-section" id="process">
-            <div class="section-heading">
-                <p class="eyebrow">Process</p>
-                <h3>A straightforward workflow that keeps the result polished.</h3>
-            </div>
-
-            <div class="process-grid">
-                <article class="process-card">
-                    <span class="process-step">01</span>
-                    <h4>Define the problem</h4>
-                    <p>Start with a clear goal, constraints, and a focused visual direction before building anything.</p>
-                </article>
-                <article class="process-card">
-                    <span class="process-step">02</span>
-                    <h4>Prototype and refine</h4>
-                    <p>Test ideas early, simplify the layout, and remove anything that does not support the outcome.</p>
-                </article>
-                <article class="process-card">
-                    <span class="process-step">03</span>
-                    <h4>Present cleanly</h4>
-                    <p>Use consistent spacing, restrained color, and a tighter content structure to make the work easier to read.</p>
-                </article>
-            </div>
-        </section>
     </main>
-
-    <footer class="footer">
-        <div class="container footer-inner">
-            <p>&copy; 2026 Dalvin Heyninck</p>
-            <p>Built for a cleaner portfolio presentation.</p>
-        </div>
-    </footer>
-
-    <script src="js/projects.js"></script>
-    <script src="js/gallery.js"></script>
 </body>
 </html>

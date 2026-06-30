@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Dalvin Heyninck</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="contact-body">
+    <main class="contact-shell">
+        <header class="contact-topbar">
+            <a class="contact-brand" href="index.html" aria-label="Go to intro page">
+                <span>Portfolio</span>
+                <strong>Dalvin Heyninck</strong>
+            </a>
+
+            <nav class="contact-nav" aria-label="Primary navigation">
+                <a class="contact-nav-link" href="work.html">My work</a>
+                <a class="contact-nav-link" href="about.html">About me</a>
+                <a class="contact-nav-link is-active" href="contact.html">Contact</a>
+                <a class="contact-nav-link" href="index.html">More</a>
+            </nav>
+        </header>
+
+        <section class="contact-hero" aria-label="Contact introduction">
+            <h1>Let’s build the next idea.</h1>
+            <p class="contact-lead">
+                If you want to talk about a project, collaboration, or just ask a question, this is the place.
+            </p>
+        </section>
+
+        <section class="contact-layout">
+            <aside class="contact-panel contact-details" aria-label="Contact details">
+                <h2>Direct contact</h2>
+                <p class="contact-detail-copy">
+                    Use the links below for the fastest route.
+                </p>
+
+                <a class="contact-link-card" href="mailto:dalvin.heyninck1@gmail.com">
+                    <span>Email</span>
+                    <strong>dalvin.heyninck1@gmail.com</strong>
+                </a>
+
+                <a class="contact-link-card" href="https://www.linkedin.com/in/dalvin-heyninck-9ba2582a3/" target="_blank" rel="noreferrer noopener">
+                    <span>LinkedIn</span>
+                    <strong>LinkedIn profile</strong>
+                </a>
+            </aside>
+
+            <section class="contact-panel contact-form-panel" aria-label="Contact form">
+                <h2>Send a message</h2>
+                <form class="contact-form" id="contact-form">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" placeholder="Your name" required>
+                    </label>
+
+                    <label>
+                        <span>Email</span>
+                        <input type="email" name="email" placeholder="you@example.com" required>
+                    </label>
+
+                    <label>
+                        <span>Subject</span>
+                        <input type="text" name="subject" placeholder="Project inquiry" required>
+                    </label>
+
+                    <label>
+                        <span>Message</span>
+                        <textarea name="message" rows="6" placeholder="Tell me a bit about your idea..." required></textarea>
+                    </label>
+
+                    <div class="contact-actions">
+                        <button class="button button-primary" type="submit">Send message</button>
+                    </div>
+
+                    <p class="contact-status" id="contact-status" aria-live="polite"></p>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/contact.js"></script>
+</body>
+</html>

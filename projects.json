@@ -4,6 +4,8 @@
     "title": "Project BMO",
     "description": "A personalizable and customizable macropad",
     "category": "physical",
+    "workCategory": "own-projects",
+    "tags": ["physical", "electrical", "pcb", "programming", "3d-printer", "design"],
     "image": "/images/project-1/project-1-hero.png",
     "page": "projects/project-1.html"
   },
@@ -12,6 +14,8 @@
     "title": "FabLab Ledbox",
     "description": "A custom built LED sign for the KdG FabLab",
     "category": "physical",
+    "workCategory": "college-assignments",
+    "tags": ["physical", "electrical", "programming", "3d-printer", "design"],
     "image": "/images/project-2/project-2-hero (Medium).png",
     "page": "projects/project-2.html"
   },
@@ -20,6 +24,8 @@
     "title": "Useless Box",
     "description": "A Voronoi styled useless box",
     "category": "physical",
+    "workCategory": "college-assignments",
+    "tags": ["physical", "3d-printer", "design"],
     "image": "/images/project-3/project-3-hero (Medium).png",
     "page": "projects/project-3.html"
   },
@@ -28,6 +34,8 @@
     "title": "Mushroom Dome Lamp",
     "description": "A custom built lamp in the shape of a mushroom dome",
     "category": "physical",
+    "workCategory": "own-projects",
+    "tags": ["physical", "3d-printer", "design"],
     "image": "/images/project-4/project-4-hero (Medium).png",
     "page": "projects/project-4.html"
     },
@@ -36,6 +44,8 @@
     "title": "Mexlite Hanging Light",
     "description": "A digital recreation of the Mexlite hanging light",
     "category": "digital",
+    "workCategory": "cad-exercises",
+    "tags": ["digital", "design"],
     "image": "/images/project-5/project-5-hero.png",
     "page": "projects/project-5.html"
   },
@@ -44,6 +54,8 @@
     "title": "3D Printed Vase",
     "description": "A decorative vase designed and 3D printed using PLA filament",
     "category": "physical",
+    "workCategory": "cad-exercises",
+    "tags": ["physical", "3d-printer", "design"],
     "image": "/images/project-6/project-6-hero (Medium).png",
     "page": "projects/project-6.html"
   },
@@ -52,6 +64,8 @@
     "title": "Personal Blog",
     "description": "A minimalist personal blog built with Jekyll and hosted on GitHub Pages",
     "category": "digital",
+    "workCategory": "own-projects",
+    "tags": ["digital", "programming", "design"],
     "image": "/images/project-7/project-7-hero (Medium).png",
     "page": "projects/project-7.html"
   },
@@ -60,6 +74,8 @@
     "title": "Arduino Weather Station",
     "description": "A weather station built with an Arduino Uno, DHT22 sensor, and LCD display",
     "category": "physical",
+    "workCategory": "college-assignments",
+    "tags": ["physical", "electrical", "pcb", "programming", "design"],
     "image": "/images/project-8/project-8-hero (Medium).png",
     "page": "projects/project-8.html"
   }
