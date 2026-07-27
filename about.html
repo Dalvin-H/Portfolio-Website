@@ -4,106 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Dalvin Heyninck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="about-body">
+<body class="about-body about-dark-mode animated-bg">
     <main class="about-shell">
-        <header class="about-topbar">
-            <a class="about-brand" href="index.html" aria-label="Go to intro page">
-                <span>Portfolio</span>
-                <strong>Dalvin Heyninck</strong>
+        <header class="about-topbar" id="about-topbar">
+            <a class="about-brand" href="index.html" aria-label="Go to home page">
+                <span class="about-brand-copy">
+                    <strong>DALVIN HEYNINCK</strong>
+                    <small>Creative Technologist &amp; Maker</small>
+                </span>
             </a>
 
-            <nav class="about-nav" aria-label="Primary navigation">
-                <a class="about-nav-link" href="work.html">My work</a>
-                <a class="about-nav-link is-active" href="about.html">About me</a>
+            <button
+                class="about-menu-toggle"
+                type="button"
+                id="about-menu-toggle"
+                aria-expanded="false"
+                aria-controls="about-nav"
+                aria-label="Toggle navigation menu"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="about-nav" id="about-nav" aria-label="Primary navigation">
+                <a class="about-nav-link" href="index.html">Home</a>
+                <a class="about-nav-link" href="work.html">My Work</a>
+                <a class="about-nav-link is-active" href="about.html" aria-current="page">About Me</a>
+                <a class="about-nav-link" href="#experience">Experience</a>
+                <a class="about-nav-link" href="#resume">Resume</a>
                 <a class="about-nav-link" href="contact.html">Contact</a>
-                <a class="about-nav-link" href="index.html">More</a>
+                <button class="about-nav-chip about-nav-chip-icon" type="button" id="about-dark-mode-toggle" aria-pressed="true" aria-label="Switch to light mode" title="Switch to light mode">☀</button>
             </nav>
         </header>
 
-        <section class="about-hero">
-            <p class="about-kicker">About me</p>
-            <h1>Who I am, what I enjoy, and what I can bring.</h1>
-            <p class="about-lead">
-                I’m Dalvin, a Multimedia & Creative Technologies graduate who enjoys turning ideas into practical,
-                visually considered projects across design, digital fabrication, coding, and prototyping.
-            </p>
-        </section>
-
-        <section class="about-intro-grid">
-            <figure class="about-portrait-card">
-                <img class="about-portrait" src="Portret_Dalvin.jpg" alt="Portrait of Dalvin Heyninck">
-            </figure>
-
-            <div class="about-story-card">
-                <h2>Who I am</h2>
-                <p>
-                    I like work that sits between making and thinking. My approach is hands-on, but I still care about
-                    structure, clarity, and the final presentation. I want my projects to look considered, but also feel
-                    useful and grounded.
-                </p>
-                <p>
-                    I’m most motivated by projects where I can combine visual design, technical problem solving, and a
-                    practical build process into something that actually works in the real world.
+        <section class="about-hero reveal" aria-label="About introduction">
+            <div class="about-hero-copy">
+                <p class="about-kicker">SYSTEM_PROFILE_01</p>
+                <h1>About Me</h1>
+                <p class="about-lead">
+                    A creative technologist and maker focused on building practical systems where software,
+                    engineering and design come together.
                 </p>
             </div>
         </section>
 
-        <section class="about-panels" aria-label="About details">
-            <article class="about-panel">
-                <p class="about-panel-label">Interests</p>
-                <h2>What I enjoy working on</h2>
-                <ul>
-                    <li>3D design and physical making</li>
-                    <li>Product development and prototyping</li>
-                    <li>Programming and interactive systems</li>
-                    <li>Digital fabrication and craft-based workflows</li>
-                </ul>
-            </article>
+        <section class="about-profile-top reveal" aria-label="Profile summary">
+            <figure class="about-portrait-card">
+                <img class="about-portrait" src="Portret_Dalvin.jpg" alt="Portrait of Dalvin Heyninck" loading="lazy">
+            </figure>
+            <aside class="about-spec-card" aria-label="Technical profile sheet">
+                <p class="about-panel-label">PROFILE</p>
+                <dl>
+                    <div><dt>Name</dt><dd>Dalvin Heyninck</dd></div>
+                    <div><dt>Field</dt><dd>Creative Technology</dd></div>
+                    <div><dt>Education</dt><dd>Multimedia &amp; Creative Technologies</dd></div>
+                    <div><dt>Specialization</dt><dd>3D &amp; XR</dd></div>
+                    <div><dt>Focus Areas</dt><dd>Software Development, XR Development, Embedded Systems, CAD Design, Digital Fabrication, Rapid Prototyping</dd></div>
+                </dl>
+            </aside>
+        </section>
 
-            <article class="about-panel">
-                <p class="about-panel-label">Studies</p>
-                <h2>What I studied</h2>
-                <p>
-                    I graduated in Multimedia & Creative Technologies, where I built a base in design thinking,
-                    digital tools, fabrication processes, and the technical side of creative work.
-                </p>
-                <p>
-                    That background taught me how to move from an idea to a tested concept, then into a more polished
-                    and presentable result.
-                </p>
-            </article>
+        <section class="about-compact-section reveal" id="experience" aria-label="About highlights">
+            <div class="about-compact-grid" id="resume">
+                <article class="about-compact-card">
+                    <p class="about-panel-label">ABOUT MYSELF</p>
+                    <h2>Who I Am</h2>
+                    <p>
+                        I am a Multimedia &amp; Creative Technologies graduate specialized in 3D &amp; XR.
+                        I enjoy building complete systems that blend software, hardware, design and engineering.
+                    </p>
+                </article>
 
-            <article class="about-panel">
-                <p class="about-panel-label">Experience</p>
-                <h2>What I’ve done</h2>
-                <p>
-                    My experience comes from combining college assignments with self-driven projects. I’ve worked on
-                    physical builds, digital concepts, CAD exercises, and projects that mix electronics, programming,
-                    and fabrication.
-                </p>
-                <p>
-                    I’m comfortable moving between concept work, iteration, testing, and the final presentation stage.
-                </p>
-            </article>
+                <article class="about-compact-card">
+                    <p class="about-panel-label">INTERESTS</p>
+                    <h2>What Drives Me</h2>
+                    <p>
+                        Building things from scratch, understanding how technology works, and turning concepts into
+                        practical prototypes through CAD, electronics and fabrication.
+                    </p>
+                </article>
 
-            <article class="about-panel about-delivery-panel">
-                <p class="about-panel-label">What I can deliver</p>
-                <h2>How I can help</h2>
-                <p>
-                    I can help shape an idea into a clear outcome, whether that means designing a product, building a
-                    prototype, preparing files for fabrication, or combining digital and physical elements into a single
-                    project.
-                </p>
-                <div class="about-delivery-list">
-                    <span>Concept development</span>
-                    <span>Design and prototyping</span>
-                    <span>Technical implementation</span>
-                    <span>Fabrication-ready output</span>
-                </div>
-            </article>
+                <article class="about-compact-card">
+                    <p class="about-panel-label">SKILLS</p>
+                    <h2>Core Stack</h2>
+                    <p>
+                        Unity, Blender, C#, Python, JavaScript, ESP32, Arduino, PCB Design, Fusion 360,
+                        3D Printing and digital fabrication workflows.
+                    </p>
+                </article>
+
+                <article class="about-compact-card">
+                    <p class="about-panel-label">THE WAY I WORK</p>
+                    <h2>Build by Understanding</h2>
+                    <p>
+                        Explore, design, build and refine. I prefer understanding each part of a system so the final
+                        result is not only creative, but robust and functional.
+                    </p>
+                </article>
+            </div>
+            <p class="about-tech-tag tech-detail">REV_NOTE: SYSTEM_PROFILE_01 · BUILD_STATUS: COMPLETE</p>
         </section>
     </main>
+    <script src="js/about.js"></script>
 </body>
 </html>

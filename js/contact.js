@@ -1,3 +1,65 @@
+function setupContactNavbar() {
+  const topbar = document.getElementById('contact-topbar');
+  const menuToggle = document.getElementById('contact-menu-toggle');
+  const nav = document.getElementById('contact-nav');
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener('click', () => {
+      const next = !nav.classList.contains('is-open');
+      nav.classList.toggle('is-open', next);
+      menuToggle.setAttribute('aria-expanded', String(next));
+    });
+  }
+
+  if (topbar) {
+    window.addEventListener('scroll', () => {
+      topbar.classList.toggle('is-scrolled', window.scrollY > 16);
+    });
+  }
+}
+
+function setupContactThemeToggle() {
+  const darkModeToggle = document.getElementById('contact-dark-mode-toggle');
+
+  if (!darkModeToggle) {
+    return;
+  }
+
+  function syncThemeButton() {
+    const isDarkMode = document.body.classList.contains('contact-dark-mode');
+    const nextModeLabel = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode';
+    darkModeToggle.setAttribute('aria-pressed', String(isDarkMode));
+    darkModeToggle.setAttribute('aria-label', nextModeLabel);
+    darkModeToggle.setAttribute('title', nextModeLabel);
+    darkModeToggle.textContent = isDarkMode ? '☀' : '☾';
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('contact-dark-mode');
+    syncThemeButton();
+  });
+
+  syncThemeButton();
+}
+
+const contactRevealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      contactRevealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.01,
+  rootMargin: '0px 0px 240px 0px'
+});
+
+function setupContactRevealAnimations() {
+  document.querySelectorAll('.reveal').forEach(section => {
+    contactRevealObserver.observe(section);
+  });
+}
+
 const contactForm = document.getElementById('contact-form');
 const contactStatus = document.getElementById('contact-status');
 
@@ -60,3 +122,9 @@ if (contactForm && contactStatus) {
     }
   });
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupContactNavbar();
+  setupContactThemeToggle();
+  setupContactRevealAnimations();
+});

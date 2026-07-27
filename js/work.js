@@ -1,200 +1,530 @@
 const categoryFilters = [
-  { key: 'all', label: 'All projects' },
-  { key: 'own-projects', label: 'Own projects' },
-  { key: 'college-assignments', label: 'College assignments' },
-  { key: 'cad-exercises', label: 'CAD exercises' }
+  { key: 'all', label: 'All' },
+  { key: 'digital', label: 'Digital' },
+  { key: 'physical', label: 'Physical' },
+  { key: 'practice', label: 'Practice (CAD)' },
+  { key: 'research', label: 'Research' },
+  { key: 'client', label: 'Client' },
+  { key: 'school', label: 'School' }
 ];
 
 const detailFilters = [
-  { key: 'digital', label: 'Digital' },
-  { key: 'physical', label: 'Fysical' },
-  { key: 'electrical', label: 'Electrical' },
-  { key: '3d-printer', label: '3D-printer' },
-  { key: 'lasercutter', label: 'Lasercutter' },
-  { key: 'cnc', label: 'CNC' },
-  { key: 'pcb', label: 'PCB' },
-  { key: 'programming', label: 'Programming' },
-  { key: 'design', label: 'Design' }
+  'programming',
+  'unity',
+  'xr',
+  'web',
+  'electronics',
+  'esp32',
+  'arduino',
+  'pcb-design',
+  'cad',
+  'fusion-360',
+  '3d-printing',
+  'laser-cutting',
+  'cnc',
+  'welding',
+  'painting',
+  'ai',
+  'industrial'
 ];
 
-let allProjects = [];
-let activeCategory = 'all';
-let activeDetailFilters = [];
+const categoryFilterMap = {
+  all: [...detailFilters],
+  digital: ['programming', 'unity', 'xr', 'web', 'ai'],
+  physical: [
+    'electronics',
+    'esp32',
+    'arduino',
+    'pcb-design',
+    'cad',
+    'fusion-360',
+    '3d-printing',
+    'laser-cutting',
+    'cnc',
+    'welding',
+    'painting',
+    'industrial'
+  ],
+  practice: ['programming', 'unity', 'xr', 'web', 'ai'],
+  research: ['programming', 'unity', 'xr', 'web', 'ai', 'electronics', 'industrial'],
+  client: ['programming', 'web', 'unity', 'xr', 'ai', 'industrial', 'cad'],
+  school: ['programming', 'unity', 'xr', 'web', 'electronics', 'arduino', 'cad', '3d-printing', 'ai']
+};
 
-function formatCategoryLabel(category) {
-  const filter = categoryFilters.find(item => item.key === category);
-  return filter ? filter.label : category;
+const projects = [
+  {
+    title: 'BitPrint',
+    description: 'Compact educational 3D printer built completely from scratch.',
+    category: 'physical',
+    tags: ['electronics', 'esp32', 'cad', 'fusion-360', '3d-printing', 'industrial'],
+    image: '/images/project-1/project-1-hero.png',
+    page: 'projects/project-1.html',
+    size: 'tall'
+  },
+  {
+    title: 'VR Boiler Simulation',
+    description: 'A real-time boiler training simulator for process education.',
+    category: 'school',
+    tags: ['unity', 'xr', 'programming'],
+    image: '/images/project-13/project-13-hero.png',
+    page: 'under-construction.html',
+    size: 'wide'
+  },
+  {
+    title: 'Industrial AR Product',
+    description: 'AR-assisted maintenance guidance for industrial assemblies.',
+    category: 'client',
+    tags: ['xr', 'unity', 'industrial'],
+    image: '/images/project-10/project-10-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Custom ESP32 Control Board',
+    description: 'Embedded control board for sensor-rich fabrication systems.',
+    category: 'practice',
+    tags: ['electronics', 'esp32', 'pcb-design', 'programming'],
+    image: '/images/project-14/project-14-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Autonomous Rover',
+    description: 'Multi-sensor navigation platform with rapid prototyping workflow.',
+    category: 'school',
+    tags: ['arduino', 'programming', 'electronics', '3d-printing'],
+    image: '/images/project-12/project-12-hero.jpg',
+    page: 'under-construction.html',
+    size: 'tall'
+  },
+  {
+    title: 'Laser Cut Lamp',
+    description: 'Parametric lamp design assembled from laser-cut components.',
+    category: 'physical',
+    tags: ['laser-cutting', 'cad', 'fusion-360', 'industrial'],
+    image: '/images/project-11/project-11-hero.jpg',
+    page: 'projects/project-4.html',
+    size: 'normal'
+  },
+  {
+    title: 'Tube Frame Construction',
+    description: 'Welded tube-frame study for rigid lightweight structures.',
+    category: 'practice',
+    tags: ['welding', 'industrial', 'cad'],
+    image: '/images/project-15/project-15-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Data Dashboard',
+    description: 'Operational dashboard for machine metrics and diagnostics.',
+    category: 'digital',
+    tags: ['web', 'programming', 'ai'],
+    image: '/images/project-5/project-5-hero.png',
+    page: 'projects/project-5.html',
+    size: 'wide'
+  },
+  {
+    title: 'Wearable Device',
+    description: 'Human-centered prototype combining embedded sensing and form.',
+    category: 'client',
+    tags: ['electronics', 'pcb-design', '3d-printing', 'industrial'],
+    image: '/images/project-16/project-16-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Interactive Web Portfolio',
+    description: 'High-performance portfolio platform with design system thinking.',
+    category: 'digital',
+    tags: ['web', 'programming'],
+    image: '/images/project-2/project-2-hero.png',
+    page: 'projects/project-2.html',
+    size: 'normal'
+  },
+  {
+    title: 'Fabrication Study Model',
+    description: 'CNC and paint finish study for material behavior exploration.',
+    category: 'physical',
+    tags: ['cnc', 'painting', 'cad'],
+    image: '/images/project-9/project-9-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Spatial XR Interaction',
+    description: 'Rapid prototyping of intuitive spatial interaction patterns.',
+    category: 'school',
+    tags: ['xr', 'unity', 'ai'],
+    image: '/images/project-3/project-3-hero.png',
+    page: 'projects/project-3.html',
+    size: 'normal'
+  },
+  {
+    title: 'Factory Interface Concept',
+    description: 'Placeholder tile for an upcoming industrial UI case study.',
+    category: 'digital',
+    tags: ['web', 'programming', 'industrial'],
+    image: '/images/project-10/project-10-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Embedded Sensor Rig',
+    description: 'Placeholder tile for a modular electronics platform build.',
+    category: 'school',
+    tags: ['electronics', 'esp32', 'arduino'],
+    image: '/images/project-14/project-14-hero.jpg',
+    page: 'under-construction.html',
+    size: 'tall'
+  },
+  {
+    title: 'XR Maintenance Trainer',
+    description: 'Placeholder tile for hands-on training in mixed reality.',
+    category: 'client',
+    tags: ['xr', 'unity', 'programming'],
+    image: '/images/project-13/project-13-hero.png',
+    page: 'under-construction.html',
+    size: 'wide'
+  },
+  {
+    title: 'Parametric Furniture Study',
+    description: 'Placeholder tile for CNC and Fusion-driven furniture forms.',
+    category: 'physical',
+    tags: ['cad', 'fusion-360', 'cnc'],
+    image: '/images/project-15/project-15-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Wearable Health Node',
+    description: 'Placeholder tile for a wearable embedded sensing prototype.',
+    category: 'research',
+    tags: ['electronics', 'pcb-design', 'ai'],
+    image: '/images/project-16/project-16-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Kinetic Light Assembly',
+    description: 'Placeholder tile for an interactive light sculpture system.',
+    category: 'physical',
+    tags: ['laser-cutting', '3d-printing', 'industrial'],
+    image: '/images/project-11/project-11-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Data Ops Command Board',
+    description: 'Placeholder tile for a real-time operations dashboard.',
+    category: 'digital',
+    tags: ['web', 'programming', 'ai'],
+    image: '/images/project-5/project-5-hero.png',
+    page: 'under-construction.html',
+    size: 'wide'
+  },
+  {
+    title: 'Prototype Paint Finishes',
+    description: 'Placeholder tile for material and finish exploration tests.',
+    category: 'practice',
+    tags: ['painting', 'industrial', 'cad'],
+    image: '/images/project-9/project-9-hero.jpg',
+    page: 'under-construction.html',
+    size: 'normal'
+  },
+  {
+    title: 'Smart Fixture Toolkit',
+    description: 'Placeholder tile for tooling and precision fixture concepts.',
+    category: 'client',
+    tags: ['electronics', 'cad', 'welding'],
+    image: '/images/project-12/project-12-hero.jpg',
+    page: 'under-construction.html',
+    size: 'tall'
+  },
+  {
+    title: 'Digital Twin Sandbox',
+    description: 'Placeholder tile for connected systems and simulation workflows.',
+    category: 'research',
+    tags: ['ai', 'web', 'industrial'],
+    image: '/images/project-2/project-2-hero.png',
+    page: 'under-construction.html',
+    size: 'normal'
+  }
+];
+
+const state = {
+  category: 'all',
+  filters: new Set(),
+  page: 1,
+  pageSize: 32,
+  filtered: [...projects]
+};
+
+// Fixed 32-slot pattern for a stable mosaic: mostly small tiles with a few larger accents.
+const TILE_LAYOUT_PATTERN = [
+  'large', 'small', 'small', 'wide', 'small', 'small', 'wide', 'small',
+  'large', 'small', 'small', 'small', 'wide', 'small', 'small', 'small',
+  'small', 'large', 'small', 'small', 'wide', 'small', 'small', 'wide',
+  'small', 'small', 'large', 'small', 'small', 'wide', 'small', 'small'
+];
+
+const grid = document.getElementById('work-grid');
+const categoryBar = document.getElementById('category-bar');
+const detailFilterBar = document.getElementById('detail-filter-bar');
+const paginationPages = document.getElementById('pagination-pages');
+const previousButton = document.getElementById('pagination-prev');
+const nextButton = document.getElementById('pagination-next');
+
+function toLabel(key) {
+  return key
+    .split('-')
+    .map(chunk => chunk.charAt(0).toUpperCase() + chunk.slice(1))
+    .join(' ');
 }
 
-function buildFallbackImage(title, category) {
-  const palette = {
-    'own-projects': ['#f1f4f0', '#8f9c93'],
-    'college-assignments': ['#e5eadf', '#7c867f'],
-    'cad-exercises': ['#dde3db', '#728076'],
-    default: ['#edf0ec', '#879088']
-  };
-
-  const colors = palette[category] || palette.default;
-  const initials = title
-    .split(/\s+/)
-    .filter(Boolean)
-    .map(word => word[0])
-    .join('')
-    .slice(0, 2)
-    .toUpperCase();
-
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-label="${title}">
-      <defs>
-        <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#0c0d0c" />
-          <stop offset="100%" stop-color="#171917" />
-        </linearGradient>
-        <radialGradient id="glow" cx="35%" cy="30%" r="80%">
-          <stop offset="0%" stop-color="${colors[0]}" stop-opacity="0.85" />
-          <stop offset="60%" stop-color="${colors[1]}" stop-opacity="0.25" />
-          <stop offset="100%" stop-color="${colors[1]}" stop-opacity="0" />
-        </radialGradient>
-      </defs>
-      <rect width="800" height="800" fill="url(#bg)" />
-      <circle cx="260" cy="270" r="240" fill="url(#glow)" />
-      <circle cx="640" cy="630" r="200" fill="${colors[1]}" fill-opacity="0.16" />
-      <path d="M120 610 C250 500, 350 700, 520 560 S700 450, 760 520" fill="none" stroke="${colors[0]}" stroke-width="6" stroke-opacity="0.28" />
-      <path d="M70 190 C200 120, 290 130, 410 180 S610 300, 740 230" fill="none" stroke="${colors[1]}" stroke-width="4" stroke-opacity="0.24" />
-      <text x="80" y="685" fill="#f4f7f3" font-family="Arial, Helvetica, sans-serif" font-size="120" font-weight="700" letter-spacing="4">${initials}</text>
-    </svg>
-  `;
-
-  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+function getVisibleFilters() {
+  return categoryFilterMap[state.category] || detailFilters;
 }
 
-function renderFilters() {
-  const filterContainer = document.getElementById('category-bar');
-  if (!filterContainer) {
-    return;
-  }
-
-  filterContainer.innerHTML = categoryFilters.map(filter => `
-    <button type="button" class="category-button ${filter.key === activeCategory ? 'is-active' : ''}" data-category="${filter.key}">
-      ${filter.label}
-    </button>
-  `).join('');
-
-  filterContainer.querySelectorAll('.category-button').forEach(button => {
-    button.addEventListener('click', () => {
-      activeCategory = button.dataset.category;
-      renderFilters();
-      renderProjects();
-    });
-  });
-
-  const detailContainer = document.getElementById('detail-filter-bar');
-  if (!detailContainer) {
-    return;
-  }
-
-  detailContainer.innerHTML = detailFilters.map(filter => `
-    <button type="button" class="detail-filter-button ${activeDetailFilters.includes(filter.key) ? 'is-active' : ''}" data-detail="${filter.key}">
-      ${filter.label}
-    </button>
-  `).join('');
-
-  detailContainer.querySelectorAll('.detail-filter-button').forEach(button => {
-    button.addEventListener('click', () => {
-      const selectedKey = button.dataset.detail;
-
-      if (selectedKey === 'all') {
-        activeDetailFilters = [];
-      } else if (activeDetailFilters.includes(selectedKey)) {
-        activeDetailFilters = activeDetailFilters.filter(key => key !== selectedKey);
-      } else {
-        activeDetailFilters = [...activeDetailFilters, selectedKey];
-      }
-
-      renderFilters();
-      renderProjects();
-    });
+function pruneUnavailableFilters() {
+  const visibleFilters = new Set(getVisibleFilters());
+  state.filters.forEach(filter => {
+    if (!visibleFilters.has(filter)) {
+      state.filters.delete(filter);
+    }
   });
 }
 
-function renderProjects() {
-  const grid = document.getElementById('work-grid');
-  if (!grid) {
-    return;
+function cardClass(index) {
+  const slotSize = TILE_LAYOUT_PATTERN[index % TILE_LAYOUT_PATTERN.length];
+  if (slotSize === 'large') {
+    return 'work-tile tile-large';
   }
+  if (slotSize === 'wide') {
+    return 'work-tile tile-wide';
+  }
+  return 'work-tile tile-small';
+}
 
-  const projects = allProjects.filter(project => {
-    const matchesCategory = activeCategory === 'all' || project.workCategory === activeCategory;
-    const projectTags = Array.isArray(project.tags) ? project.tags : [];
-    const matchesDetailFilters = activeDetailFilters.length === 0
-      || activeDetailFilters.some(filterKey => projectTags.includes(filterKey));
+function applyFilterState() {
+  state.filtered = projects.filter(project => {
+    const categoryMatch = state.category === 'all' || project.category === state.category;
+    if (!categoryMatch) {
+      return false;
+    }
 
-    return matchesCategory && matchesDetailFilters;
+    if (state.filters.size === 0) {
+      return true;
+    }
+
+    return [...state.filters].every(filter => project.tags.includes(filter));
   });
 
-  if (projects.length === 0) {
-    grid.innerHTML = '<p class="work-empty"><strong>No projects found.</strong> Try a different category or remove some detail filters.</p>';
-    return;
+  const totalPages = Math.max(1, Math.ceil(state.filtered.length / state.pageSize));
+  if (state.page > totalPages) {
+    state.page = totalPages;
   }
+}
 
-  grid.innerHTML = projects.map(project => {
-    const fallbackImage = buildFallbackImage(project.title, project.workCategory);
-    const imageSource = project.image || fallbackImage;
-    const categoryLabel = formatCategoryLabel(project.workCategory);
-    const tileTarget = 'under-construction.html';
-    const detailLabels = (Array.isArray(project.tags) ? project.tags : [])
-      .map(tag => detailFilters.find(filter => filter.key === tag)?.label || tag)
-      .slice(0, 3)
-      .join(' · ');
-
+function renderCategoryButtons() {
+  categoryBar.innerHTML = categoryFilters.map(item => {
+    const isActive = item.key === state.category;
     return `
-      <a class="work-tile" href="${tileTarget}" aria-label="Open ${project.title}">
-        <img
-          src="${imageSource}"
-          alt="${project.title} teaser image"
-          loading="lazy"
-          data-fallback="${fallbackImage}"
-        >
-        <div class="work-overlay">
-          <p class="work-overlay-tag">${categoryLabel}</p>
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
-          ${detailLabels ? `<p class="work-overlay-meta">${detailLabels}</p>` : ''}
-        </div>
-      </a>
+      <button
+        type="button"
+        class="category-button ${isActive ? 'is-active' : ''}"
+        data-category="${item.key}"
+        aria-pressed="${isActive}"
+      >
+        ${item.label}
+      </button>
     `;
   }).join('');
 
-  grid.querySelectorAll('img[data-fallback]').forEach(image => {
-    image.addEventListener('error', () => {
-      const fallback = image.dataset.fallback;
-      if (fallback && image.src !== fallback) {
-        image.src = fallback;
-      }
+  categoryBar.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', () => {
+      state.category = button.dataset.category;
+      pruneUnavailableFilters();
+      state.page = 1;
+      animateAndRender();
     });
   });
 }
 
-async function loadProjects() {
-  try {
-    const response = await fetch('./projects.json');
-    const data = await response.json();
-    allProjects = Array.isArray(data) ? data : data.projects || [];
-    allProjects = allProjects.map(project => ({
-      ...project,
-      workCategory: project.workCategory || 'own-projects',
-      tags: Array.isArray(project.tags) ? project.tags : []
-    }));
+function renderDetailButtons() {
+  const visibleFilters = getVisibleFilters();
 
-    renderFilters();
-    renderProjects();
-  } catch (error) {
-    console.error('Error loading projects:', error);
-    const grid = document.getElementById('work-grid');
-    if (grid) {
-      grid.innerHTML = '<p class="work-empty">Unable to load projects.</p>';
-    }
-  }
+  detailFilterBar.innerHTML = visibleFilters.map(key => {
+    const isActive = state.filters.has(key);
+    return `
+      <button
+        type="button"
+        class="detail-filter-button ${isActive ? 'is-active' : ''}"
+        data-detail="${key}"
+        aria-pressed="${isActive}"
+      >
+        ${toLabel(key)}
+      </button>
+    `;
+  }).join('');
+
+  detailFilterBar.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', () => {
+      const key = button.dataset.detail;
+      if (state.filters.has(key)) {
+        state.filters.delete(key);
+      } else {
+        state.filters.add(key);
+      }
+      state.page = 1;
+      animateAndRender();
+    });
+  });
 }
 
-document.addEventListener('DOMContentLoaded', loadProjects);
+function renderPagination(totalPages) {
+  paginationPages.innerHTML = '';
+
+  for (let page = 1; page <= totalPages; page += 1) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = `pagination-btn ${state.page === page ? 'is-active' : ''}`;
+    button.textContent = String(page);
+    button.setAttribute('aria-label', `Go to page ${page}`);
+    button.addEventListener('click', () => {
+      state.page = page;
+      animateAndRender();
+    });
+    paginationPages.append(button);
+  }
+
+  previousButton.disabled = state.page <= 1;
+  nextButton.disabled = state.page >= totalPages;
+}
+
+function renderProjects() {
+  applyFilterState();
+  renderCategoryButtons();
+  renderDetailButtons();
+
+  const totalPages = Math.max(1, Math.ceil(state.filtered.length / state.pageSize));
+  const startIndex = (state.page - 1) * state.pageSize;
+  const pageItems = state.filtered.slice(startIndex, startIndex + state.pageSize);
+
+  if (pageItems.length === 0) {
+    grid.innerHTML = '<p class="work-empty"><strong>No projects found.</strong> Remove a filter or switch categories.</p>';
+    renderPagination(totalPages);
+    return;
+  }
+
+  grid.innerHTML = pageItems.map((project, index) => `
+    <article class="${cardClass(index)}" style="--tile-delay:${index * 70}ms">
+      <a href="${project.page}" class="work-tile-link" aria-label="Open ${project.title}">
+        <img src="${project.image}" alt="${project.title}" loading="lazy">
+        <div class="work-overlay">
+          <p class="work-overlay-tag">${toLabel(project.category)}</p>
+          <h3>${project.title}</h3>
+          <p>${project.description}</p>
+          <span class="work-overlay-arrow" aria-hidden="true">↗</span>
+        </div>
+      </a>
+      <p class="work-tile-meta">${project.tags.slice(0, 3).map(toLabel).join(' · ')}</p>
+    </article>
+  `).join('');
+
+  renderPagination(totalPages);
+  observeFreshCards();
+}
+
+function animateAndRender() {
+  grid.classList.add('is-updating');
+  window.setTimeout(() => {
+    renderProjects();
+    grid.classList.remove('is-updating');
+  }, 140);
+}
+
+function setupPaginationButtons() {
+  previousButton.addEventListener('click', () => {
+    if (state.page > 1) {
+      state.page -= 1;
+      animateAndRender();
+    }
+  });
+
+  nextButton.addEventListener('click', () => {
+    const totalPages = Math.max(1, Math.ceil(state.filtered.length / state.pageSize));
+    if (state.page < totalPages) {
+      state.page += 1;
+      animateAndRender();
+    }
+  });
+}
+
+function setupNavbarEffects() {
+  const topbar = document.getElementById('work-topbar');
+  const menuToggle = document.getElementById('work-menu-toggle');
+  const nav = document.getElementById('work-nav');
+
+  window.addEventListener('scroll', () => {
+    topbar.classList.toggle('is-scrolled', window.scrollY > 16);
+  });
+
+  menuToggle.addEventListener('click', () => {
+    const next = !nav.classList.contains('is-open');
+    nav.classList.toggle('is-open', next);
+    menuToggle.setAttribute('aria-expanded', String(next));
+  });
+}
+
+function setupThemeToggles() {
+  const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+  function syncDarkModeButton() {
+    const isDarkMode = document.body.classList.contains('work-dark-mode');
+    const nextModeLabel = isDarkMode ? 'Switch to light mode' : 'Switch to dark mode';
+    darkModeToggle.setAttribute('aria-pressed', String(isDarkMode));
+    darkModeToggle.setAttribute('aria-label', nextModeLabel);
+    darkModeToggle.setAttribute('title', nextModeLabel);
+    darkModeToggle.textContent = isDarkMode ? '☀' : '☾';
+  }
+
+  darkModeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('work-dark-mode');
+    syncDarkModeButton();
+  });
+
+  syncDarkModeButton();
+}
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.01,
+  rootMargin: '0px 0px 240px 0px'
+});
+
+function setupRevealAnimations() {
+  document.querySelectorAll('.reveal').forEach(section => {
+    revealObserver.observe(section);
+  });
+}
+
+function observeFreshCards() {
+  document.querySelectorAll('.work-tile').forEach(card => {
+    revealObserver.observe(card);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  setupNavbarEffects();
+  setupThemeToggles();
+  setupPaginationButtons();
+  setupRevealAnimations();
+  renderProjects();
+});

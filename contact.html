@@ -4,32 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact - Dalvin Heyninck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="contact-body">
+<body class="contact-body contact-dark-mode animated-bg">
     <main class="contact-shell">
-        <header class="contact-topbar">
-            <a class="contact-brand" href="index.html" aria-label="Go to intro page">
-                <span>Portfolio</span>
-                <strong>Dalvin Heyninck</strong>
+        <header class="contact-topbar" id="contact-topbar">
+            <a class="contact-brand" href="index.html" aria-label="Go to home page">
+                <span class="contact-brand-copy">
+                    <strong>DALVIN HEYNINCK</strong>
+                    <small>Creative Technologist &amp; Maker</small>
+                </span>
             </a>
 
-            <nav class="contact-nav" aria-label="Primary navigation">
-                <a class="contact-nav-link" href="work.html">My work</a>
-                <a class="contact-nav-link" href="about.html">About me</a>
-                <a class="contact-nav-link is-active" href="contact.html">Contact</a>
-                <a class="contact-nav-link" href="index.html">More</a>
+            <button
+                class="contact-menu-toggle"
+                type="button"
+                id="contact-menu-toggle"
+                aria-expanded="false"
+                aria-controls="contact-nav"
+                aria-label="Toggle navigation menu"
+            >
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="contact-nav" id="contact-nav" aria-label="Primary navigation">
+                <a class="contact-nav-link" href="index.html">Home</a>
+                <a class="contact-nav-link" href="work.html">My Work</a>
+                <a class="contact-nav-link" href="about.html">About Me</a>
+                <a class="contact-nav-link" href="index.html#experience">Experience</a>
+                <a class="contact-nav-link" href="index.html#resume">Resume</a>
+                <a class="contact-nav-link is-active" href="contact.html" aria-current="page">Contact</a>
+                <button class="contact-nav-chip contact-nav-chip-icon" type="button" id="contact-dark-mode-toggle" aria-pressed="true" aria-label="Switch to light mode" title="Switch to light mode">☀</button>
             </nav>
         </header>
 
-        <section class="contact-hero" aria-label="Contact introduction">
+        <section class="contact-hero reveal" aria-label="Contact introduction">
+            <p class="contact-kicker">COMMUNICATION_CHANNEL</p>
             <h1>Let’s build the next idea.</h1>
             <p class="contact-lead">
                 If you want to talk about a project, collaboration, or just ask a question, this is the place.
             </p>
         </section>
 
-        <section class="contact-layout">
+        <section class="contact-layout reveal">
             <aside class="contact-panel contact-details" aria-label="Contact details">
                 <h2>Direct contact</h2>
                 <p class="contact-detail-copy">
@@ -47,7 +68,7 @@
                 </a>
             </aside>
 
-            <section class="contact-panel contact-form-panel" aria-label="Contact form">
+            <section class="contact-panel contact-form-panel" id="resume" aria-label="Contact form">
                 <h2>Send a message</h2>
                 <form class="contact-form" id="contact-form">
                     <label>
@@ -71,7 +92,7 @@
                     </label>
 
                     <div class="contact-actions">
-                        <button class="button button-primary" type="submit">Send message</button>
+                        <button class="contact-submit-btn" type="submit">Send message</button>
                     </div>
 
                     <p class="contact-status" id="contact-status" aria-live="polite"></p>
