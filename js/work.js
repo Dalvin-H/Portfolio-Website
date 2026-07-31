@@ -1,5 +1,6 @@
 const categoryFilters = [
   { key: 'all', label: 'All' },
+  { key: 'featured', label: 'Featured' },
   { key: 'digital', label: 'Digital' },
   { key: 'physical', label: 'Physical' },
   { key: 'practice', label: 'Practice (CAD)' },
@@ -24,13 +25,13 @@ const detailFilters = [
   'cnc',
   'welding',
   'painting',
-  'ai',
-  'industrial'
+  'ai'
 ];
 
 const categoryFilterMap = {
   all: [...detailFilters],
-  digital: ['programming', 'unity', 'xr', 'web', 'ai'],
+  featured: [...detailFilters],
+  digital: ['programming', 'unity', 'xr', 'web', 'ai', '3d-development', '3d-modeling'],
   physical: [
     'electronics',
     'esp32',
@@ -42,8 +43,7 @@ const categoryFilterMap = {
     'laser-cutting',
     'cnc',
     'welding',
-    'painting',
-    'industrial'
+    'painting'
   ],
   practice: ['programming', 'unity', 'xr', 'web', 'ai'],
   research: ['programming', 'unity', 'xr', 'web', 'ai', 'electronics', 'industrial'],
@@ -53,220 +53,214 @@ const categoryFilterMap = {
 
 const projects = [
   {
-    title: 'BitPrint',
+    title: 'BitPrint-3D',
     description: 'Compact educational 3D printer built completely from scratch.',
-    category: 'physical',
-    tags: ['electronics', 'esp32', 'cad', 'fusion-360', '3d-printing', 'industrial'],
-    image: '/images/project-1/project-1-hero.png',
-    page: 'projects/project-1.html',
+    category: 'school',
+    tags: ['featured', 'electronics', 'esp32', 'cad', 'fusion-360', '3d-printing', 'arduino', 'pcb-design'],
+    image: '/images/BitPrint_teaser.png',
+    page: '/projects/bitprint.html',
     size: 'tall'
+  },
+  {
+    title: 'BMO',
+    description: 'Better Macro Operations: a custom macro pad for creative workflows.',
+    category: 'school',
+    tags: ['featured', 'electronics', 'cad', 'fusion-360', '3d-printing', 'pcb-design', 'arduino'],
+    image: '/images/BMO_teaser.png',
+    page: '/projects/bmo.html',
+    size: 'normal'
+  },
+  {
+    title: 'Precision Knife Case',
+    description: 'Replacement precision knife case for safe storage and transport.',
+    category: 'physical',
+    tags: ['cad', 'fusion-360', '3d-printing'],
+    image: '/images/Precision_Knife_Case_teaser.jpg',
+    page: '/projects/precision-knife-case.html',
+    size: 'normal'
+  },
+  {
+    title: 'NFC Keychain Tag',
+    description: 'Custom NFC tag as an addition to the Knowledge Hub project.',
+    category: 'school',
+    tags: ['3d-printing', 'cad'],
+    image: '/images/NFC_Tags_teaser.jpg',
+    page: '/projects/nfc-tags.html',
+    size: 'tall'
+  },
+  {
+    title: 'Belt Cover',
+    description: 'Custom belt cover for a practice engine.',
+    category: 'client',
+    tags: ['cad', 'fusion-360', '3d-printing'],
+    image: '/images/Belt_Cover_teaser.jpg',
+    page: '/projects/belt-cover.html',
+    size: 'normal'
+  },
+  {
+    title: 'BioLab Sample Tray',
+    description: 'Custom designed and printed sample tray for easy distribution and storage.',
+    category: 'client',
+    tags: ['featured', 'cad', 'fusion-360', '3d-printing'],
+    image: '/images/BioLab_Sample_Tray_teaser.jpg',
+    page: '/projects/biolab-sample-tray.html',
+    size: 'normal'
+  },
+  {
+    title: 'FabLab LED Sign',
+    description: 'Custom LED sign for the FabLab workshop, with a unique design and modular construction.',
+    category: 'physical',
+    tags: ['featured', 'laser-cutting', 'cad', 'fusion-360', 'electronics', '3d-printing'],
+    image: '/images/FabLab_LED_teaser.png',
+    page: '/projects/fablab-led-sign.html',
+    size: 'wide'
+  },
+  {
+    title: 'Helmet',
+    description: 'A cosplay clone-trooper helmet.',
+    category: 'physical',
+    tags: ['featured', '3d-printing', 'painting'],
+    image: '/images/Helmet_teaser.jpg',
+    page: '/projects/helmet.html',
+    size: 'normal'
+  },
+  {
+    title: 'Knowledge Hub',
+    description: 'Proof of concept centralized information screen with NFC based access to digital resources for a school environment.',
+    category: 'school',
+    tags: ['featured', 'programming', 'web', 'arduino', 'electronics', '3d-printing', 'cad', 'fusion-360'],
+    image: '/images/Knowledge_Hub_teaser.jpg',
+    page: '/projects/knowledge-hub.html',
+    size: 'normal'
+  },
+  {
+    title: 'Plant Tower',
+    description: 'A modular plant tower concept for indoor gardening.',
+    category: 'physical',
+    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
+    image: '/images/Plant_Tower_teaser.jpg',
+    page: '/projects/plant-tower.html',
+    size: 'normal'
+  },
+  {
+    title: 'Useless Box',
+    description: 'A creative twist on the classic Useless Box concept, with a custom built enclosure and mechanism.',
+    category: 'school',
+    tags: ['featured', 'arduino', 'programming', 'electronics', '3d-printing', 'cad', 'fusion-360', 'laser-cutting'],
+    image: '/images/Useless_Box_teaser.png',
+    page: '/projects/useless-box.html',
+    size: 'normal'
   },
   {
     title: 'VR Boiler Simulation',
     description: 'A real-time boiler training simulator for process education.',
     category: 'school',
-    tags: ['unity', 'xr', 'programming'],
-    image: '/images/project-13/project-13-hero.png',
-    page: 'under-construction.html',
+    tags: ['featured', 'unity', 'xr', 'programming', '3d-development', '3d-modeling'],
+    image: '/images/VR_boiler_teaser.png',
+    page: '/under-construction/',
     size: 'wide'
   },
   {
-    title: 'Industrial AR Product',
-    description: 'AR-assisted maintenance guidance for industrial assemblies.',
+    title: 'Filament Bracket',
+    description: 'A compact bracket concept for storing filament spools inside an IKEA PAX wardrobe.',
+    category: 'physical',
+    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
+    image: '/images/fila_hook_teaser.png',
+    page: '/projects/filament-hook.html',
+    size: 'normal'
+  },
+  {
+    title: 'Magnetic Badge',
+    description: 'A custom brand badge with a magnetic attachment for easy wearability and removal.',
     category: 'client',
-    tags: ['xr', 'unity', 'industrial'],
-    image: '/images/project-10/project-10-hero.jpg',
-    page: 'under-construction.html',
+    tags: ['featured', 'cad', '3d-printing'],
+    image: '/images/mag_badge_teaser.png',
+    page: '/under-construction/',
     size: 'normal'
   },
   {
-    title: 'Custom ESP32 Control Board',
-    description: 'Embedded control board for sensor-rich fabrication systems.',
-    category: 'practice',
-    tags: ['electronics', 'esp32', 'pcb-design', 'programming'],
-    image: '/images/project-14/project-14-hero.jpg',
-    page: 'under-construction.html',
+    title: 'VR Braking Sim',
+    description: 'A VR simulation concept for analyzing brake response in a controlled environment.',
+    category: 'client',
+    tags: ['featured', 'unity', 'xr', 'programming', 'web', 'ai'],
+    image: '/images/missing_image.png',
+    page: '/under-construction/',
     size: 'normal'
   },
   {
-    title: 'Autonomous Rover',
-    description: 'Multi-sensor navigation platform with rapid prototyping workflow.',
+    title: 'Brake Pedal',
+    description: 'A custom built brake pedal for the VR Braking Simulation project, using the Meta Quest 3 controller as input.',
+    category: 'client',
+    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
+    image: '/images/pedal_teaser.png',
+    page: '/under-construction/',
+    size: 'normal'
+  },
+  {
+    title: 'Brake Pedal Instructions',
+    description: 'A web based interactive 3D assembly instructions for the brake pedal project.',
+    category: 'digital',
+    tags: ['featured', 'web', 'programming', '3d-development', '3d-modeling'],
+    image: '/images/pedal_tutorial_teaser.png',
+    page: '/under-construction/',
+    size: 'normal'
+  },
+  {
+    title: 'ILY LED',
+    description: 'A custom built LED sign for the sign language I Love You (ILY) hand gesture.',
+    category: 'physical',
+    tags: ['electronics', '3d-printing', 'cad', 'fusion-360', 'laser-cutting'],
+    image: '/images/ILY_LED_teaser.png',
+    page: '/under-construction/',
+    size: 'normal'
+  },
+  {
+    title: 'SSD Case',
+    description: 'A replacement case for a SSD drive, in the form of a Windows file folder icon.',
+    category: 'physical',
+    tags: ['cad', '3d-printing', 'fusion-360'],
+    image: '/images/ssd_folder_teaser.png',
+    page: '/under-construction/',
+    size: 'normal'
+  },
+  {
+    title: 'Attendance NFC Scanner',
+    description: 'A system for scanning NFC based student ID cards to track attendance in a classroom setting. ',
     category: 'school',
-    tags: ['arduino', 'programming', 'electronics', '3d-printing'],
-    image: '/images/project-12/project-12-hero.jpg',
-    page: 'under-construction.html',
-    size: 'tall'
-  },
-  {
-    title: 'Laser Cut Lamp',
-    description: 'Parametric lamp design assembled from laser-cut components.',
-    category: 'physical',
-    tags: ['laser-cutting', 'cad', 'fusion-360', 'industrial'],
-    image: '/images/project-11/project-11-hero.jpg',
-    page: 'projects/project-4.html',
+    tags: ['featured', 'arduino', 'programming', 'electronics', 'web', '3d-printing', 'cad', 'fusion-360'],
+    image: '/images/NFC_scan_teaser.png',
+    page: '/under-construction/',
     size: 'normal'
   },
   {
-    title: 'Tube Frame Construction',
-    description: 'Welded tube-frame study for rigid lightweight structures.',
-    category: 'practice',
-    tags: ['welding', 'industrial', 'cad'],
-    image: '/images/project-15/project-15-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Data Dashboard',
-    description: 'Operational dashboard for machine metrics and diagnostics.',
-    category: 'digital',
-    tags: ['web', 'programming', 'ai'],
-    image: '/images/project-5/project-5-hero.png',
-    page: 'projects/project-5.html',
-    size: 'wide'
-  },
-  {
-    title: 'Wearable Device',
-    description: 'Human-centered prototype combining embedded sensing and form.',
+    title: 'Pump Replacement Part',
+    description: 'A replacement part for a motorcycle water pump.',
     category: 'client',
-    tags: ['electronics', 'pcb-design', '3d-printing', 'industrial'],
-    image: '/images/project-16/project-16-hero.jpg',
-    page: 'under-construction.html',
+    tags: ['cad', '3d-printing', 'fusion-360'],
+    image: '/images/pump_replace_part.png',
+    page: '/under-construction/',
     size: 'normal'
   },
   {
-    title: 'Interactive Web Portfolio',
-    description: 'High-performance portfolio platform with design system thinking.',
-    category: 'digital',
-    tags: ['web', 'programming'],
-    image: '/images/project-2/project-2-hero.png',
-    page: 'projects/project-2.html',
-    size: 'normal'
-  },
-  {
-    title: 'Fabrication Study Model',
-    description: 'CNC and paint finish study for material behavior exploration.',
+    title: 'Mushroom Dome',
+    description: 'A decorative mystical dome with a central mushroom and light.',
     category: 'physical',
-    tags: ['cnc', 'painting', 'cad'],
-    image: '/images/project-9/project-9-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Spatial XR Interaction',
-    description: 'Rapid prototyping of intuitive spatial interaction patterns.',
-    category: 'school',
-    tags: ['xr', 'unity', 'ai'],
-    image: '/images/project-3/project-3-hero.png',
-    page: 'projects/project-3.html',
-    size: 'normal'
-  },
-  {
-    title: 'Factory Interface Concept',
-    description: 'Placeholder tile for an upcoming industrial UI case study.',
-    category: 'digital',
-    tags: ['web', 'programming', 'industrial'],
-    image: '/images/project-10/project-10-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Embedded Sensor Rig',
-    description: 'Placeholder tile for a modular electronics platform build.',
-    category: 'school',
-    tags: ['electronics', 'esp32', 'arduino'],
-    image: '/images/project-14/project-14-hero.jpg',
-    page: 'under-construction.html',
-    size: 'tall'
-  },
-  {
-    title: 'XR Maintenance Trainer',
-    description: 'Placeholder tile for hands-on training in mixed reality.',
-    category: 'client',
-    tags: ['xr', 'unity', 'programming'],
-    image: '/images/project-13/project-13-hero.png',
-    page: 'under-construction.html',
-    size: 'wide'
-  },
-  {
-    title: 'Parametric Furniture Study',
-    description: 'Placeholder tile for CNC and Fusion-driven furniture forms.',
-    category: 'physical',
-    tags: ['cad', 'fusion-360', 'cnc'],
-    image: '/images/project-15/project-15-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Wearable Health Node',
-    description: 'Placeholder tile for a wearable embedded sensing prototype.',
-    category: 'research',
-    tags: ['electronics', 'pcb-design', 'ai'],
-    image: '/images/project-16/project-16-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Kinetic Light Assembly',
-    description: 'Placeholder tile for an interactive light sculpture system.',
-    category: 'physical',
-    tags: ['laser-cutting', '3d-printing', 'industrial'],
-    image: '/images/project-11/project-11-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Data Ops Command Board',
-    description: 'Placeholder tile for a real-time operations dashboard.',
-    category: 'digital',
-    tags: ['web', 'programming', 'ai'],
-    image: '/images/project-5/project-5-hero.png',
-    page: 'under-construction.html',
-    size: 'wide'
-  },
-  {
-    title: 'Prototype Paint Finishes',
-    description: 'Placeholder tile for material and finish exploration tests.',
-    category: 'practice',
-    tags: ['painting', 'industrial', 'cad'],
-    image: '/images/project-9/project-9-hero.jpg',
-    page: 'under-construction.html',
-    size: 'normal'
-  },
-  {
-    title: 'Smart Fixture Toolkit',
-    description: 'Placeholder tile for tooling and precision fixture concepts.',
-    category: 'client',
-    tags: ['electronics', 'cad', 'welding'],
-    image: '/images/project-12/project-12-hero.jpg',
-    page: 'under-construction.html',
-    size: 'tall'
-  },
-  {
-    title: 'Digital Twin Sandbox',
-    description: 'Placeholder tile for connected systems and simulation workflows.',
-    category: 'research',
-    tags: ['ai', 'web', 'industrial'],
-    image: '/images/project-2/project-2-hero.png',
-    page: 'under-construction.html',
+    tags: ['featured', 'cad', '3d-printing', 'fusion-360', 'painting', 'laser-cutting', 'electronics'],
+    image: '/images/mushroom_dome_teaser.png',
+    page: '/under-construction/',
     size: 'normal'
   }
+
+
 ];
 
 const state = {
-  category: 'all',
+  category: 'featured',
   filters: new Set(),
   page: 1,
   pageSize: 32,
   filtered: [...projects]
 };
-
-// Fixed 32-slot pattern for a stable mosaic: mostly small tiles with a few larger accents.
-const TILE_LAYOUT_PATTERN = [
-  'large', 'small', 'small', 'wide', 'small', 'small', 'wide', 'small',
-  'large', 'small', 'small', 'small', 'wide', 'small', 'small', 'small',
-  'small', 'large', 'small', 'small', 'wide', 'small', 'small', 'wide',
-  'small', 'small', 'large', 'small', 'small', 'wide', 'small', 'small'
-];
 
 const grid = document.getElementById('work-grid');
 const categoryBar = document.getElementById('category-bar');
@@ -295,20 +289,15 @@ function pruneUnavailableFilters() {
   });
 }
 
-function cardClass(index) {
-  const slotSize = TILE_LAYOUT_PATTERN[index % TILE_LAYOUT_PATTERN.length];
-  if (slotSize === 'large') {
-    return 'work-tile tile-large';
-  }
-  if (slotSize === 'wide') {
-    return 'work-tile tile-wide';
-  }
+function cardClass() {
   return 'work-tile tile-small';
 }
 
 function applyFilterState() {
   state.filtered = projects.filter(project => {
-    const categoryMatch = state.category === 'all' || project.category === state.category;
+    const categoryMatch = state.category === 'all'
+      || (state.category === 'featured' && project.tags.includes('featured'))
+      || project.category === state.category;
     if (!categoryMatch) {
       return false;
     }
@@ -518,6 +507,23 @@ function setupRevealAnimations() {
 function observeFreshCards() {
   document.querySelectorAll('.work-tile').forEach(card => {
     revealObserver.observe(card);
+
+    if (card.dataset.navBound === 'true') {
+      return;
+    }
+
+    card.dataset.navBound = 'true';
+    card.addEventListener('click', (event) => {
+      const interactiveTarget = event.target.closest('a, button, input, textarea, select');
+      if (interactiveTarget) {
+        return;
+      }
+
+      const link = card.querySelector('.work-tile-link');
+      if (link && link.getAttribute('href')) {
+        window.location.href = link.getAttribute('href');
+      }
+    });
   });
 }
 
