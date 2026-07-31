@@ -5305,6 +5305,48 @@ main.container {
     display: grid;
     gap: 0.42rem;
     grid-column: span 1;
+    position: relative;
+  }
+
+  .project-detail-shot.is-clickable {
+    cursor: zoom-in;
+  }
+
+  .project-detail-shot.is-clickable img {
+    transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+  }
+
+  .project-detail-shot.is-clickable:hover img,
+  .project-detail-shot.is-clickable:focus-visible img {
+    transform: scale(1.015);
+    filter: brightness(1.05);
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.22);
+  }
+
+  .project-detail-shot.is-clickable::after {
+    content: "↗";
+    position: absolute;
+    right: 0.85rem;
+    top: 0.85rem;
+    z-index: 1;
+    display: inline-grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.42);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 180ms ease, transform 180ms ease, background-color 180ms ease;
+    pointer-events: none;
+  }
+
+  .project-detail-shot.is-clickable:hover::after,
+  .project-detail-shot.is-clickable:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .project-detail-shot.span-2 {
@@ -5338,6 +5380,128 @@ main.container {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  body.project-lightbox-open {
+    overflow: hidden;
+  }
+
+  .project-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 180ms ease;
+  }
+
+  .project-lightbox.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .project-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(8px);
+  }
+
+  .project-lightbox-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(1080px, 100%);
+    max-height: min(92vh, 980px);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.8rem;
+    outline: none;
+  }
+
+  .project-lightbox-figure {
+    min-width: 0;
+    max-width: 100%;
+    display: grid;
+    gap: 0.7rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .project-lightbox-image {
+    max-width: min(100%, 1000px);
+    max-height: 80vh;
+    width: auto;
+    height: auto;
+    border-radius: 18px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    background: #050505;
+  }
+
+  .project-lightbox-caption {
+    max-width: 76ch;
+    color: rgba(238, 244, 239, 0.84);
+    text-align: center;
+    font-size: 0.92rem;
+  }
+
+  .project-lightbox-close,
+  .project-lightbox-nav {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+    background: rgba(10, 13, 11, 0.78);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+  }
+
+  .project-lightbox-close:hover,
+  .project-lightbox-close:focus-visible,
+  .project-lightbox-nav:hover,
+  .project-lightbox-nav:focus-visible {
+    transform: translateY(-1px);
+    background: rgba(15, 20, 17, 0.94);
+    border-color: rgba(99, 208, 139, 0.42);
+  }
+
+  .project-lightbox-close {
+    position: absolute;
+    top: -0.15rem;
+    right: -0.15rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    font-size: 1.45rem;
+    line-height: 1;
+    display: inline-grid;
+    place-items: center;
+    z-index: 2;
+  }
+
+  .project-lightbox-nav {
+    width: 52px;
+    height: 52px;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    line-height: 1;
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .project-lightbox-nav:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+
+  .project-lightbox-prev {
+    justify-self: end;
+  }
+
+  .project-lightbox-next {
+    justify-self: start;
   }
 
   @media (max-width: 1024px) {
@@ -5378,5 +5542,30 @@ main.container {
     .project-detail-shot.span-3,
     .project-detail-shot.span-4 {
       grid-column: span 1;
+    }
+
+    .project-lightbox {
+      padding: 0.6rem;
+    }
+
+    .project-lightbox-dialog {
+      grid-template-columns: auto;
+      gap: 0.7rem;
+      justify-items: center;
+    }
+
+    .project-lightbox-image {
+      max-height: 72vh;
+    }
+
+    .project-lightbox-prev,
+    .project-lightbox-next {
+      width: 46px;
+      height: 46px;
+    }
+
+    .project-lightbox-close {
+      top: 0.2rem;
+      right: 0.2rem;
     }
   }
