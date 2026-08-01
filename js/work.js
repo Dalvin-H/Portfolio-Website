@@ -45,7 +45,7 @@ const categoryFilterMap = {
     'welding',
     'painting'
   ],
-  practice: ['programming', 'unity', 'xr', 'web', 'ai'],
+  practice: ['cad', 'fusion-360', '3d-printing'],
   research: ['programming', 'unity', 'xr', 'web', 'ai', 'electronics', 'industrial'],
   client: ['programming', 'web', 'unity', 'xr', 'ai', 'industrial', 'cad'],
   school: ['programming', 'unity', 'xr', 'web', 'electronics', 'arduino', 'cad', '3d-printing', 'ai']
@@ -61,6 +61,42 @@ const projects = [
     page: '/projects/bitprint.html',
     size: 'tall'
   },
+    {
+    title: 'Brake Pedal',
+    description: 'A custom built brake pedal for the VR Braking Simulation project, using the Meta Quest 3 controller as input.',
+    category: 'client',
+    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
+    image: '/images/pedal_teaser.png',
+    page: '/projects/brake-pedal.html',
+    size: 'normal'
+  },
+    {
+    title: 'VR Braking Sim',
+    description: 'A VR simulation concept for analyzing brake response in a controlled environment.',
+    category: 'client',
+    tags: ['featured', 'unity', 'xr', 'programming', 'web', 'ai'],
+    image: '/images/missing_image.png',
+    page: '/under-construction/',
+    size: 'normal'
+  },
+  {
+    title: 'Brake Pedal Instructions',
+    description: 'A web based interactive 3D assembly instructions for the brake pedal project.',
+    category: 'digital',
+    tags: ['featured', 'web', 'programming', '3d-development', '3d-modeling'],
+    image: '/images/pedal_tutorial_teaser.png',
+    page: '/projects/brake-pedal-instructions.html',
+    size: 'normal'
+  },
+    {
+    title: 'Attendance NFC Scanner',
+    description: 'A system for scanning NFC based student ID cards to track attendance in a classroom setting. ',
+    category: 'school',
+    tags: ['featured', 'arduino', 'programming', 'electronics', 'web', '3d-printing', 'cad', 'fusion-360'],
+    image: '/images/NFC_scan_teaser.png',
+    page: '/projects/attendance-nfc-scanner.html',
+    size: 'normal'
+  },
   {
     title: 'BMO',
     description: 'Better Macro Operations: a custom macro pad for creative workflows.',
@@ -68,6 +104,51 @@ const projects = [
     tags: ['featured', 'electronics', 'cad', 'fusion-360', '3d-printing', 'pcb-design', 'arduino'],
     image: '/images/BMO_teaser.png',
     page: '/projects/bmo.html',
+    size: 'normal'
+  },
+  {
+    title: 'VR Boiler Simulation',
+    description: 'A real-time boiler training simulator for process education.',
+    category: 'school',
+    tags: ['featured', 'unity', 'xr', 'programming', '3d-development', '3d-modeling'],
+    image: '/images/VR_boiler_teaser.png',
+    page: '/projects/vr-boiler-simulation.html',
+    size: 'wide'
+  },
+    {
+    title: 'Useless Box',
+    description: 'A creative twist on the classic Useless Box concept, with a custom built enclosure and mechanism.',
+    category: 'school',
+    tags: ['featured', 'arduino', 'programming', 'electronics', '3d-printing', 'cad', 'fusion-360', 'laser-cutting'],
+    image: '/images/Useless_Box_teaser.png',
+    page: '/projects/useless-box.html',
+    size: 'normal'
+  },
+  {
+    title: 'CAD Practice Models',
+    description: 'A collection of practice models designed to improve CAD skills and techniques.',
+    category: 'practice',
+    tags: ['cad', 'fusion-360'],
+    image: '/images/CAD_Practice_teaser.png',
+    page: '/projects/cad-practice-1.html',
+    size: 'normal'
+  },
+  {
+    title: 'Filament Bracket',
+    description: 'A compact bracket concept for storing filament spools inside an IKEA PAX wardrobe.',
+    category: 'physical',
+    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
+    image: '/images/fila_hook_teaser.png',
+    page: '/projects/filament-hook.html',
+    size: 'normal'
+  },
+  {
+    title: 'Magnetic Badge',
+    description: 'A custom brand badge with a magnetic attachment for easy wearability and removal.',
+    category: 'client',
+    tags: ['featured', 'cad', '3d-printing'],
+    image: '/images/mag_badge_teaser.png',
+    page: '/projects/magnetic-badge.html',
     size: 'normal'
   },
   {
@@ -142,69 +223,10 @@ const projects = [
     page: '/projects/plant-tower.html',
     size: 'normal'
   },
-  {
-    title: 'Useless Box',
-    description: 'A creative twist on the classic Useless Box concept, with a custom built enclosure and mechanism.',
-    category: 'school',
-    tags: ['featured', 'arduino', 'programming', 'electronics', '3d-printing', 'cad', 'fusion-360', 'laser-cutting'],
-    image: '/images/Useless_Box_teaser.png',
-    page: '/projects/useless-box.html',
-    size: 'normal'
-  },
-  {
-    title: 'VR Boiler Simulation',
-    description: 'A real-time boiler training simulator for process education.',
-    category: 'school',
-    tags: ['featured', 'unity', 'xr', 'programming', '3d-development', '3d-modeling'],
-    image: '/images/VR_boiler_teaser.png',
-    page: '/under-construction/',
-    size: 'wide'
-  },
-  {
-    title: 'Filament Bracket',
-    description: 'A compact bracket concept for storing filament spools inside an IKEA PAX wardrobe.',
-    category: 'physical',
-    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
-    image: '/images/fila_hook_teaser.png',
-    page: '/projects/filament-hook.html',
-    size: 'normal'
-  },
-  {
-    title: 'Magnetic Badge',
-    description: 'A custom brand badge with a magnetic attachment for easy wearability and removal.',
-    category: 'client',
-    tags: ['featured', 'cad', '3d-printing'],
-    image: '/images/mag_badge_teaser.png',
-    page: '/under-construction/',
-    size: 'normal'
-  },
-  {
-    title: 'VR Braking Sim',
-    description: 'A VR simulation concept for analyzing brake response in a controlled environment.',
-    category: 'client',
-    tags: ['featured', 'unity', 'xr', 'programming', 'web', 'ai'],
-    image: '/images/missing_image.png',
-    page: '/under-construction/',
-    size: 'normal'
-  },
-  {
-    title: 'Brake Pedal',
-    description: 'A custom built brake pedal for the VR Braking Simulation project, using the Meta Quest 3 controller as input.',
-    category: 'client',
-    tags: ['featured', 'cad', '3d-printing', 'fusion-360'],
-    image: '/images/pedal_teaser.png',
-    page: '/under-construction/',
-    size: 'normal'
-  },
-  {
-    title: 'Brake Pedal Instructions',
-    description: 'A web based interactive 3D assembly instructions for the brake pedal project.',
-    category: 'digital',
-    tags: ['featured', 'web', 'programming', '3d-development', '3d-modeling'],
-    image: '/images/pedal_tutorial_teaser.png',
-    page: '/under-construction/',
-    size: 'normal'
-  },
+
+
+
+
   {
     title: 'ILY LED',
     description: 'A custom built LED sign for the sign language I Love You (ILY) hand gesture.',
@@ -223,15 +245,7 @@ const projects = [
     page: '/under-construction/',
     size: 'normal'
   },
-  {
-    title: 'Attendance NFC Scanner',
-    description: 'A system for scanning NFC based student ID cards to track attendance in a classroom setting. ',
-    category: 'school',
-    tags: ['featured', 'arduino', 'programming', 'electronics', 'web', '3d-printing', 'cad', 'fusion-360'],
-    image: '/images/NFC_scan_teaser.png',
-    page: '/under-construction/',
-    size: 'normal'
-  },
+
   {
     title: 'Pump Replacement Part',
     description: 'A replacement part for a motorcycle water pump.',
@@ -247,7 +261,7 @@ const projects = [
     category: 'physical',
     tags: ['featured', 'cad', '3d-printing', 'fusion-360', 'painting', 'laser-cutting', 'electronics'],
     image: '/images/mushroom_dome_teaser.png',
-    page: '/under-construction/',
+    page: '/projects/mushroom-dome.html',
     size: 'normal'
   }
 

@@ -110,15 +110,21 @@ window.PROJECT_GALLERY_META = {
     spans: [],
     ratios: []
   },
-  biolab_sample_tray: {
+  'biolab-sample-tray': {
     captions: [],
-    spans: [],
+    spans: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     ratios: []
   },
-  fablab_LED_sign: {
-    captions: [],
-    spans: [],
-    ratios: []
+  'fablab-led-sign': {
+    captions: [
+      'FabLab LED sign installed in the workshop',
+      'Full design in CAD',
+      'Close up of individual letter',
+      'Sign final assembly',
+      'Sign light testing'
+    ],
+    spans: ['1', '3', '1', '1', '1'],
+    ratios: [1, 1, 1, 1, 1]
   },
   fablab_sign: {
     captions: [],
@@ -130,9 +136,9 @@ window.PROJECT_GALLERY_META = {
     spans: [],
     ratios: []
   },
-  knowledge_hub: {
+  'knowledge-hub': {
     captions: [],
-    spans: [],
+    spans: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     ratios: []
   },
   nfc_tags: {
@@ -155,4 +161,63 @@ window.PROJECT_GALLERY_META = {
     spans: [],
     ratios: []
   },
+  'cad-practice-1': {
+    captions: ['Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'Too Tall Toby',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'STUDYCADCAM.COM',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub',
+      'Solidworks Hub'
+    ],
+    spans: [],
+    ratios: []
+  }
 };
