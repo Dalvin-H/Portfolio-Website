@@ -2442,7 +2442,6 @@ main.container {
     cursor: pointer;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
     transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
-    display: inline-flex;
     flex-direction: column;
     gap: 4px;
   }
@@ -3851,6 +3850,10 @@ main.container {
     justify-content: center;
     gap: 5px;
     cursor: pointer;
+  }
+
+  .about-nav {
+    display: flex;
   }
 
   .about-menu-toggle span {

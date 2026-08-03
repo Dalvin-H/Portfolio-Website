@@ -9,6 +9,13 @@ function setupAboutNavbar() {
       nav.classList.toggle('is-open', next);
       menuToggle.setAttribute('aria-expanded', String(next));
     });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860 && nav.classList.contains('is-open')) {
+        nav.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
   }
 
   if (topbar) {
